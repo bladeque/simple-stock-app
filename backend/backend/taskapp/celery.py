@@ -68,8 +68,8 @@ def fetch_company_info(best_matches):
             # TODO: Log an error and continue
             continue
 
-        domain = top_match and f'//{top_match["domain"]}'
-        logo_url = top_match and top_match['logo']
+        domain = top_match and f'//{top_match["domain"]}' or None
+        logo_url = top_match and top_match['logo'] or None
 
         company_info = {
             'symbol': symbol,

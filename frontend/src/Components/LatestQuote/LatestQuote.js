@@ -17,6 +17,16 @@ class LatestQuote extends React.Component {
     buttonDisabled: false,
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props.quote !== prevProps.quote) {
+      // reset the state
+      this.setState({
+        message: null,
+        buttonDisabled: false,
+      });
+    }
+  }
+
   saveQuote = () => {
     const { quote, onSubmit } = this.props;
 
