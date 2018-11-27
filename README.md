@@ -47,5 +47,7 @@ $ npm start
 A few things I had _not enough time_ to add:
 * write **tests** (!)
 * add API documentation (e.g. Swagger)
+* API versioning
+* Add Flow or at least PropTypes to React components (best solution: TypeScript)
 * implement automatic refresh of a current quote - this can be achieved for example 
 by polling an API endpoint in time intervals or using Django Channels + WebSockets. 

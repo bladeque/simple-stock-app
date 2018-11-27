@@ -1,12 +1,11 @@
 import os
 import re
-import requests
 
+import requests
 from celery import Celery
 from django.apps import apps, AppConfig
 from django.conf import settings
 from django.core.cache import cache
-
 
 if not settings.configured:
     # set the default Django settings module for the 'celery' program.
@@ -60,7 +59,7 @@ def fetch_company_info(best_matches):
         resp = requests.get(
             settings.CLEARBIT_API_URL,
             # TODO: extend regex to strip other common terms
-            params={'query': re.sub('Inc.', '', name)},
+            params={'query': re.sub(r'\s(Inc?.|L.P.|Ltd?.)', '', name)},
         )
 
         try:
